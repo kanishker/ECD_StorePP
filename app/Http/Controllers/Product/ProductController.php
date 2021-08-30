@@ -21,9 +21,14 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $products1=products::query()
-   ->whereLike('name', $searchTerm)
-   ->whereLike('email', $searchTerm)
-   ->get();
+   ->where('product_name', $request->psearch)
+   ->paginate(2)->setPath ( '' );
+   $pagination = $products1->appends ( array (
+           'psearch' => $request->psearch
+         ) );
+   //$products1->withPath('search?'.$request->psearch);
+
+   //dd($products1);
    return view('Shop.home', ['products'=>$products1]);
     }
     

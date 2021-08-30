@@ -19,7 +19,7 @@
                         </li>
                         
                     </ul>
-                    <form class="d-flex">
+                    <form class="d-flex" action='/search'>
                         <input type ='text'id="psearch" name="psearch"></input>&nbsp;&nbsp;
                         <input type='submit' value='Search'> </input>&nbsp;
                         <button class="btn btn-outline-dark" type="submit">

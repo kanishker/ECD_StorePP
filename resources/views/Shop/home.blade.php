@@ -1,6 +1,7 @@
 @extends('ShopLayout/ShopLayout')
 @section('Products')
  <!-- Section-->
+ @if (isset($products))
  @foreach($products as $product)
  <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -27,7 +28,11 @@
                     
                    
 </section>
+
 @endforeach
+@else
+<h1>No reseults Found</h1>
+@endif
 {{ $products->links() }}
 @endsection
 
